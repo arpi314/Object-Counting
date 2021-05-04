@@ -1,5 +1,3 @@
-//***67/100***//
-
 #include<stdio.h>
 
 int neighborCheck(int n, int m, int i, int j, int arr[n][m]);
@@ -45,11 +43,12 @@ int main(){
     return 0;
 }
 
+//recursively goes through the array and replacing a pixel and its neighbors to 0 (or mark it as an object) 
 int neighborCheck(int n, int m, int i, int j, int arr[n][m]){
     if(i < 0 || i >= n || j < 0 || j >= m || arr[i][j] == 0){
         return 0;
     }else{
-        arr[i][j] = 0;
+        arr[i][j] = 0; 
         neighborCheck(n, m, i+1, j, arr); //N
         neighborCheck(n, m, i-1, j, arr); //S
         neighborCheck(n, m, i, j+1, arr); //E
